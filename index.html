@@ -582,6 +582,65 @@ section {
     background: var(--gold);
     z-index: 10;
 }
+/* --- FIM --- */
+            /* --- INÍCIO - EFEITO DE DESTAQUE E SOBREPOSIÇÃO (MOBILE) --- */
+
+/* 1. Removemos o espaçamento da grade para controlar manualmente */
+.audience-grid {
+    gap: 0;
+}
+
+/* 2. Adicionamos uma margem inferior a todos os cards para criar o espaço */
+.audience-card {
+    margin-bottom: 30px; 
+}
+
+/* 3. Estilizamos o card do meio para "saltar" e se sobrepor */
+.audience-card.main-card {
+    position: relative; /* Garante que o z-index funcione bem */
+    z-index: 2;         /* Coloca este card na frente */
+    transform: scale(1.07);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* Sombra mais pronunciada */
+    
+    /* Puxa o card para cima, sobrepondo a margem do card anterior */
+    margin-top: -15px; 
+    
+    /* Ajusta sua própria margem inferior para o card de baixo se encaixar */
+    margin-bottom: 15px; 
+}
+
+/* 4. Garantimos que os outros cards fiquem "atrás" */
+.audience-card:not(.main-card) {
+    position: relative;
+    z-index: 1;
+    transform: scale(1);
+}
+
+/* --- FIM --- */
+          /* --- INÍCIO - FUNDO DEGRADÊ COM CONTROLE DE BORDAS (MOBILE) --- */
+
+.audience-gradient-bg-mobile {
+    position: absolute;
+    z-index: 0; /* Para ficar atrás dos cards */
+    background: linear-gradient(160deg, var(--gold), #3a2e0c 85%);
+    border-radius: 25px;
+
+    /* ======== CONTROLES DE AJUSTE FINO (POR BORDAS) ======== */
+
+    /* Distância do TOPO. Valores negativos (ex: -50px) fazem o fundo "crescer" para cima. */
+    top: 15px;
+
+    /* Distância da BASE. Valores negativos (ex: -50px) fazem o fundo "crescer" para baixo. */
+    bottom: 50px;
+
+    /* Distância da ESQUERDA. Valores negativos (ex: -20px) expandem para a esquerda. */
+    left: -10px;
+
+    /* Distância da DIREITA. Valores negativos (ex: -20px) expandem para a direita. */
+    right: -10px;
+
+    /* ======================================================= */
+}
 
 /* --- FIM --- */
     </style>
@@ -668,7 +727,8 @@ section {
                 <div class="audience-gradient-background"></div>
 
                 <div class="audience-grid">
-                    <div class="audience-card">
+            <div class="audience-gradient-bg-mobile"></div>
+            <div class="audience-card">
                         <h3>MULHERES QUE ESTÃO PERDIDAS NO CASAMENTO</h3>
                         <div class="divider"></div>
                         <p>Se você sente que tudo desandou, que ele se afastou e você já não sabe mais o que fazer, essa aula vai te mostrar por onde começar, com clareza, ciência e fé.</p>
