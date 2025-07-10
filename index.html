@@ -485,39 +485,54 @@
         <p>Copyright 2025 – Todos os direitos reservados.</p>
     </footer>
 <script>
-    // Seleciona o formulário pelo ID que adicionamos
     const form = document.getElementById('lead-form');
 
     form.addEventListener('submit', function(event) {
-        // Previne o comportamento padrão do formulário
         event.preventDefault();
 
-        // URL do webhook do Make.com (do site de referência)
         const webhookUrl = 'https://hook.us1.make.com/q2y2n698q9y2iht1y23gq1wovs814y42';
-        
-        // Página de obrigado (do site de referência)
         const thankYouPageUrl = 'https://neurociencianocasamento.online/obrigado';
+        const submitButton = form.querySelector('button[type="submit"]');
 
-        // Pega os dados do formulário
+        // Desativa o botão para evitar cliques duplos
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
+
+        // --- INÍCIO DA CORREÇÃO ---
+        // Cria um objeto simples com os dados do formulário
         const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        // --- FIM DA CORREÇÃO ---
 
-        // Envia os dados para o webhook
         fetch(webhookUrl, {
             method: 'POST',
-            body: formData
+            // --- MUDANÇA IMPORTANTE ---
+            // Define o cabeçalho como JSON e converte o objeto de dados em texto JSON
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            // --- FIM DA MUDANÇA ---
         })
         .then(response => {
-            // Se o envio foi bem-sucedido, redireciona para a página de obrigado
             if (response.ok) {
                 window.location.href = thankYouPageUrl;
             } else {
-                // Se der erro, avisa o usuário
-                alert('Houve um erro ao enviar seus dados. Tente novamente.');
+                // Se o servidor retornar um erro (ex: 404, 500)
+                alert('Houve um erro no servidor. Tente novamente mais tarde.');
+                submitButton.disabled = false; // Reativa o botão em caso de erro
+                submitButton.textContent = 'Inscreva-se';
             }
         })
         .catch(error => {
-            console.error('Erro no envio:', error);
-            alert('Houve um erro de conexão. Tente novamente.');
+            // Se houver um erro de rede/conexão
+            console.error('Erro de conexão:', error);
+            alert('Houve um erro de conexão. Verifique sua internet e tente novamente.');
+            submitButton.disabled = false; // Reativa o botão em caso de erro
+            submitButton.textContent = 'Inscreva-se';
         });
     });
 </script>
