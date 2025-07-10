@@ -66,6 +66,14 @@
             overflow: hidden;
         }
 
+        /* --- ESTILO DA NOVA FAIXA SEPARADORA --- */
+        .gradient-separator {
+            height: 8px; /* Altura da faixa. Ajuste se desejar. */
+            background: linear-gradient(to right, #1c1c1c, var(--dark-gold), #1c1c1c);
+        }
+        /* --- FIM DO ESTILO DA FAIXA --- */
+
+
         .hero {
             background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa386f4.webp');
             background-size: cover;
@@ -184,24 +192,22 @@
             text-align: center; 
         }
 
-        /* --- TÍTULOS DA SEÇÃO AJUSTADOS AQUI --- */
         .benefits h2 {
-            font-size: 1.7rem; /* Fonte menor */
+            font-size: 1.7rem;
             margin-bottom: 10px;
-            max-width: 600px; /* Largura máxima para se alinhar com 2 cards */
-            margin-left: auto; /* Centraliza */
-            margin-right: auto; /* Centraliza */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .benefits .subtitle {
-            font-size: 1rem; /* Fonte menor */
+            font-size: 1rem;
             color: #555;
             margin-bottom: 40px;
-            max-width: 600px; /* Largura máxima para se alinhar com 2 cards */
-            margin-left: auto; /* Centraliza */
-            margin-right: auto; /* Centraliza */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.4;
         }
-        /* --- FIM DO AJUSTE DOS TÍTULOS --- */
 
         .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: left; }
         
@@ -269,7 +275,7 @@
             .hero { background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp'); background-position: top center; }
             .hero .container { justify-content: flex-end; flex-direction: column; min-height: 100vh; }
             .hero-content { max-width: 100%; }
-            .benefits h2, .benefits .subtitle { max-width: 90%; } /* Ajuste de largura para mobile */
+            .benefits h2, .benefits .subtitle { max-width: 90%; }
             .benefits-grid { grid-template-columns: 1fr; }
             .audience-bg { display: none; }
             .audience { padding-bottom: 60px; }
@@ -334,8 +340,9 @@
             </div>
         </section>
 
+        <div class="gradient-separator"></div>
+
         <section class="audience">
-            <div class="audience-bg"></div>
             <div class="container">
                 <h2>VEJA PARA QUEM É A CIM®:</h2>
                  <div class="audience-grid">
