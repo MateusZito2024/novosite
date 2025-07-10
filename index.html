@@ -29,7 +29,6 @@
             box-sizing: border-box;
         }
         
-        /* Adicionado para rolagem suave */
         html {
             scroll-behavior: smooth;
         }
@@ -98,11 +97,10 @@
         
         .hero-logo {
             width: 150px;
-            margin-top: -55px;    /* Ajusta a margem SUPERIOR */
-            margin-bottom: -60px; /* Ajusta a margem INFERIOR */
-            margin-left: auto;   /* Inicialmente centralizado (pode ser '0px' ou valor específico) */
-            margin-right: auto;  /* Inicialmente centralizado (pode ser '0px' ou valor específico) */
-        }
+            margin-top: -55px;
+            margin-bottom: -60px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-content h1 {
@@ -312,7 +310,6 @@
         .audience-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
         .audience-card .divider { width: 100px; height: 1px; background-color: var(--dark-gray); margin: 15px auto; }
         
-        /* --- ESTILOS DO BOTÃO VERDE ATUALIZADOS AQUI --- */
         @keyframes pulsar {
             0% {
                 transform: scale(1);
@@ -326,7 +323,7 @@
 
         .audience-cta-button { 
             display: inline-block; 
-            background: linear-gradient(135deg, #023004, var(--green)); /* Novo gradiente */
+            background: linear-gradient(135deg, #023004, var(--green));
             color: var(--white); 
             padding: 15px 40px; 
             font-weight: 700; 
@@ -336,13 +333,12 @@
             position: relative; 
             z-index: 2; 
             margin-top: 60px; 
-            animation: pulsar 1.5s infinite alternate ease-in-out; /* Animação aplicada */
+            animation: pulsar 1.5s infinite alternate ease-in-out;
         }
         .audience-cta-button:hover {
-            animation-play-state: paused; /* Pausa a animação no hover */
-            transform: scale(1.1); /* Efeito de crescimento maior */
+            animation-play-state: paused;
+            transform: scale(1.1);
         }
-        /* --- FIM DAS ALTERAÇÕES --- */
 
         .audience-bg { display: none; }
 
@@ -363,7 +359,7 @@
             }
             .audience-card.main-card,
             .audience-card:not(.main-card) {
-                 transform: none;
+                transform: none;
             }
             .about .container { flex-direction: column; }
             .audience-gradient-background { display: none; }
@@ -398,16 +394,24 @@
                 </div>
 
                 <div class="form-wrapper">
-    <p class="form-title">Preencha os seus dados para participar:</p>
-    <form id="lead-form"> 
-        <input name="name" type="text" placeholder="* Digite seu Nome" required>
-        <input name="email" type="email" placeholder="* Digite seu melhor E-mail" required>
-        <input name="phone" type="tel" placeholder="* Digite seu WhatsApp" required>
-        <button class="btn" type="submit">Inscreva-se</button>
-    </form>
-</div>
+                    <p class="form-title">Preencha os seus dados para participar:</p>
+                    <form id="lead-form" class="elementor-form" method="POST" action="https://neurosintonia.activehosted.com/proc.php" novalidate>
+                        <input type="hidden" name="u" value="4">
+                        <input type="hidden" name="f" value="4">
+                        <input type="hidden" name="s" value="">
+                        <input type="hidden" name="c" value="0">
+                        <input type="hidden" name="m" value="0">
+                        <input type="hidden" name="act" value="sub">
+                        <input type="hidden" name="v" value="2">
+                        <input type="hidden" name="or" value="246816027b4d3f31f9040a7620a2e7c4">
+                        
+                        <input name="fullname" type="text" placeholder="* Digite seu Nome" required>
+                        <input name="email" type="email" placeholder="* Digite seu melhor E-mail" required>
+                        <input name="phone" type="tel" placeholder="* Digite seu WhatsApp" required>
+                        <button class="btn" type="submit">Inscreva-se</button>
+                    </form>
                 </div>
-            </div>
+                </div>
         </div>
     </header>
 
@@ -468,7 +472,7 @@
 
         <section class="about">
             <div class="container">
-                 <div class="about-content">
+                <div class="about-content">
                     <h2>Quem é Renata Mariano?</h2>
                     <p>Renata Mariano é neurocientista, terapeuta emocional e especialista em restauração de casamentos. Há mais de 10 anos, dedica sua vida a ajudar mulheres que amam, mas sofrem caladas dentro de seus relacionamentos.</p>
                     <p>Ao longo de sua jornada, Renata já impactou mais de <b>70 mil mulheres</b> com seus devocionais, mentorias e treinamentos, aplicando a metodologia <b>NeuroSintonia</b> que une ciência do cérebro, princípios bíblicos e ferramentas práticas de reconexão emocional.</p>
@@ -476,7 +480,7 @@
                     <p>Além disso, é criadora do movimento que acredita que nenhuma mulher precisa implorar amor, e que é possível restaurar um casamento sozinha com sabedoria, verdade e NeuroSintonia.</p>
                 </div>
                 <div class="about-image-placeholder">
-                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -484,56 +488,64 @@
     <footer>
         <p>Copyright 2025 – Todos os direitos reservados.</p>
     </footer>
+
 <script>
-    const form = document.getElementById('lead-form');
+    document.addEventListener('DOMContentLoaded', function() {
+        const leadForm = document.getElementById('lead-form');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        if (leadForm) {
+            leadForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
 
-        const webhookUrl = 'https://hook.us1.make.com/q2y2n698q9y2iht1y23gq1wovs814y42';
-        const thankYouPageUrl = 'https://neurociencianocasamento.online/obrigado';
-        const submitButton = form.querySelector('button[type="submit"]');
+                const submitButton = leadForm.querySelector('button[type="submit"]');
+                const nameInput = leadForm.querySelector('input[name="fullname"]');
+                const emailInput = leadForm.querySelector('input[name="email"]');
+                const phoneInput = leadForm.querySelector('input[name="phone"]');
 
-        // Desativa o botão para evitar cliques duplos
-        submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
+                // Validação simples
+                if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim()) {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return;
+                }
 
-        // --- INÍCIO DA CORREÇÃO ---
-        // Cria um objeto simples com os dados do formulário
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-        // --- FIM DA CORREÇÃO ---
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
 
-        fetch(webhookUrl, {
-            method: 'POST',
-            // --- MUDANÇA IMPORTANTE ---
-            // Define o cabeçalho como JSON e converte o objeto de dados em texto JSON
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-            // --- FIM DA MUDANÇA ---
-        })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = thankYouPageUrl;
-            } else {
-                // Se o servidor retornar um erro (ex: 404, 500)
-                alert('Houve um erro no servidor. Tente novamente mais tarde.');
-                submitButton.disabled = false; // Reativa o botão em caso de erro
-                submitButton.textContent = 'Inscreva-se';
-            }
-        })
-        .catch(error => {
-            // Se houver um erro de rede/conexão
-            console.error('Erro de conexão:', error);
-            alert('Houve um erro de conexão. Verifique sua internet e tente novamente.');
-            submitButton.disabled = false; // Reativa o botão em caso de erro
-            submitButton.textContent = 'Inscreva-se';
-        });
+                // --- Dados para o ActiveCampaign (usa todos os campos do formulário)
+                const activeCampaignFormData = new FormData(leadForm);
+                
+                // --- Dados para o Webhook do Make.com (apenas nome e e-mail)
+                const makeHookData = {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    phone: phoneInput.value
+                };
+
+                const webhookUrl = 'https://hook.us1.make.com/gvh2xwoousg953trp7fhd7sx150djzlu';
+                const activeCampaignUrl = 'https://neurosintonia.activehosted.com/proc.php';
+                const thankYouPageUrl = 'https://neurosintonia.com.br/pagina-de-obrigado-webnar/';
+
+                // Envia para ambos os destinos ao mesmo tempo
+                Promise.allSettled([
+                    fetch(webhookUrl, {
+                        method: 'POST',
+                        mode: 'no-cors', // Importante para evitar erros de CORS
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(makeHookData)
+                    }),
+                    fetch(activeCampaignUrl, {
+                        method: 'POST',
+                        mode: 'no-cors', // Importante para evitar erros de CORS
+                        body: activeCampaignFormData
+                    })
+                ]).finally(() => {
+                    // Espera um instante e redireciona para a página de obrigado, independentemente do resultado dos envios
+                    setTimeout(() => {
+                        window.location.href = thankYouPageUrl;
+                    }, 800); // Um pequeno atraso para ajudar a garantir que as requisições foram enviadas
+                });
+            });
+        }
     });
 </script>
 </body>
