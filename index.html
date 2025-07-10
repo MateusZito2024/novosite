@@ -21,7 +21,23 @@
             --light-gray: #f8f8f8;
             --green: #098b0e;
             --input-bg: #e9e9e9;
+            --error-red: #d93025; /* Cor para erros */
         }
+
+        /* --- ESTILOS DE ERRO --- */
+        .error-message {
+            color: var(--error-red);
+            font-size: 0.8rem;
+            text-align: left;
+            display: none; /* Escondido por padrão */
+            margin-top: -8px;
+            margin-bottom: 8px;
+        }
+
+        input.input-error {
+            border: 1px solid var(--error-red) !important;
+        }
+        /* --- FIM DOS ESTILOS DE ERRO --- */
 
         * {
             margin: 0;
@@ -39,54 +55,44 @@
             background-color: var(--white);
             line-height: 1.5;
         }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
         }
-
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
         }
-
         p {
             margin-bottom: 0.8rem;
         }
-
         img {
             max-width: 100%;
             height: auto;
         }
-
         a {
             text-decoration: none;
             color: inherit;
         }
-
         section {
             padding: 60px 0;
             overflow: hidden;
         }
-
         .gradient-separator {
             height: 40px;
             background: linear-gradient(to right, #1c1c1c, var(--dark-gold), #1c1c1c);
         }
-
         .hero {
             background-image: url('https://i.postimg.cc/qRSNrT73/Renata-Cabe-alho-Photoroom.jpg');
             background-size: cover;
             background-position: center;
             padding: 10px 0;
         }
-
         .hero .container {
             display: flex;
             align-items: center;
         }
-
         .hero-content {
             background-color: rgba(255, 255, 255, 0.98);
             padding: 20px;
@@ -94,7 +100,6 @@
             width: 100%;
             max-width: 500px;
         }
-        
         .hero-logo {
             width: 150px;
             margin-top: -55px;
@@ -102,21 +107,17 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .hero-content h1 {
             font-size: 1.8rem;
             line-height: 1.2;
             margin-bottom: 10px;
         }
-
         .hero-content h1 .highlight {
             color: var(--gold);
         }
-
         .hero-content .hero-subtitle {
             margin-bottom: 10px;
         }
-        
         .event-wrapper {
             padding: 2px;
             border-radius: 50px;
@@ -124,13 +125,11 @@
             display: inline-block;
             margin: 20px 0;
         }
-
         .event-tags {
             display: flex;
             border-radius: 50px;
             overflow: hidden;
         }
-
         .event-tags span {
             display: flex;
             align-items: center;
@@ -139,29 +138,24 @@
             font-size: 0.9rem;
             padding: 8px 15px;
         }
-        
         .event-tags span:first-child {
             background: linear-gradient(135deg, var(--dark-gold), #5e450b);
             color: var(--white);
         }
-        
         .event-tags span:last-child {
             background: var(--white);
             color: var(--dark-gray);
             border-left: 2px solid var(--gold);
         }
-
         .event-tags img {
             width: 16px;
             height: 16px;
             margin-right: 6px;
         }
-        
         .form-wrapper .form-title {
             font-weight: 700;
             margin-bottom: 8px;
         }
-
         .form-wrapper input {
             width: 100%;
             background-color: var(--input-bg);
@@ -172,7 +166,6 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 0.9rem;
         }
-        
         .form-wrapper .btn {
             width: 100%;
             padding: 12px;
@@ -190,12 +183,10 @@
         .form-wrapper .btn:hover {
             transform: scale(1.02);
         }
-
-        .benefits { 
-            background-color: var(--white); 
-            text-align: center; 
+        .benefits {
+            background-color: var(--white);
+            text-align: center;
         }
-
         .benefits h2 {
             font-size: 1.7rem;
             margin-bottom: 10px;
@@ -212,9 +203,12 @@
             margin-right: auto;
             line-height: 1.4;
         }
-
-        .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: left; }
-        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: left;
+        }
         .benefit-card {
             background-color: var(--light-gray);
             padding: 25px;
@@ -225,12 +219,10 @@
             transition: all 0.2s ease-in-out;
             padding-bottom: 35px;
         }
-
         .benefit-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.25);
         }
-
         .benefit-card::after {
             content: '';
             position: absolute;
@@ -238,26 +230,24 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, 
-                var(--dark-gold) 0%, 
-                var(--gold) 30%, 
-                rgba(255, 255, 255, 0.4) 60%, 
-                rgba(0, 0, 0, 0.2) 90%
-            );
+            background: linear-gradient(90deg, var(--dark-gold) 0%, var(--gold) 30%, rgba(255, 255, 255, 0.4) 60%, rgba(0, 0, 0, 0.2) 90%);
         }
-        
-        .benefit-card img { width: 28px; margin-bottom: 15px; }
-        .benefit-card p { font-size: 1rem; line-height: 1.5; }
-        
-        .audience { 
-            background-color: var(--light-gray); 
+        .benefit-card img {
+            width: 28px;
+            margin-bottom: 15px;
+        }
+        .benefit-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .audience {
+            background-color: var(--light-gray);
             padding: 80px 0;
         }
-        .audience .container { 
-            text-align: center; 
+        .audience .container {
+            text-align: center;
             position: relative;
         }
-
         .audience-gradient-background {
             position: absolute;
             top: 117px;
@@ -268,48 +258,50 @@
             border-radius: 20px;
             z-index: 1;
         }
-
-        .audience h2 { 
-            color: #686868; 
-            font-size: 1.5rem; 
+        .audience h2 {
+            color: #686868;
+            font-size: 1.5rem;
             margin-bottom: 80px;
             position: relative;
             z-index: 2;
         }
-        .audience-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1.1fr 1fr; 
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr 1fr;
             gap: 0;
-            align-items: center; 
+            align-items: center;
             position: relative;
             z-index: 2;
         }
-
-        .audience-card { 
-            background: var(--white); 
-            padding: 30px; 
-            border: 1px solid var(--gold); 
-            border-radius: 10px; 
-            height: 100%; 
+        .audience-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            height: 100%;
             transition: all 0.3s ease;
             position: relative;
         }
-
-        .audience-card.main-card { 
+        .audience-card.main-card {
             transform: scale(1.1);
             z-index: 3;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
-
         .audience-card:not(.main-card) {
             transform: scale(0.95);
             z-index: 2;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-
-        .audience-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
-        .audience-card .divider { width: 100px; height: 1px; background-color: var(--dark-gray); margin: 15px auto; }
-        
+        .audience-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .audience-card .divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--dark-gray);
+            margin: 15px auto;
+        }
         @keyframes pulsar {
             0% {
                 transform: scale(1);
@@ -320,57 +312,102 @@
                 box-shadow: 0 7px 25px rgba(9, 139, 14, 0.4);
             }
         }
-
-        .audience-cta-button { 
-            display: inline-block; 
+        .audience-cta-button {
+            display: inline-block;
             background: linear-gradient(135deg, #023004, var(--green));
-            color: var(--white); 
-            padding: 15px 40px; 
-            font-weight: 700; 
-            border-radius: 7px; 
+            color: var(--white);
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 7px;
             border: none;
-            text-transform: uppercase; 
-            position: relative; 
-            z-index: 2; 
-            margin-top: 60px; 
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            margin-top: 60px;
             animation: pulsar 1.5s infinite alternate ease-in-out;
         }
         .audience-cta-button:hover {
             animation-play-state: paused;
             transform: scale(1.1);
         }
-
-        .audience-bg { display: none; }
-
-        .about { background-color: #020202; background-image: url('https://i.postimg.cc/15h6Fm57/renata-rodap-Photoroom.jpg'); background-size: cover; background-position: center; color: #d0d0d0; }
-        .about .container { display: flex; align-items: center; gap: 40px; }
-        .about-content { flex: 1; }
-        .about-content h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
-        .about-content p { font-style: italic; font-size: 1.1rem; }
-        .about-image-placeholder { flex: 1; }
-        
-        footer { background-color: #424242; color: var(--white); text-align: center; padding: 15px 0; font-size: 0.9rem; }
-
+        .audience-bg {
+            display: none;
+        }
+        .about {
+            background-color: #020202;
+            background-image: url('https://i.postimg.cc/15h6Fm57/renata-rodap-Photoroom.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #d0d0d0;
+        }
+        .about .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-content {
+            flex: 1;
+        }
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .about-content p {
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        .about-image-placeholder {
+            flex: 1;
+        }
+        footer {
+            background-color: #424242;
+            color: var(--white);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
         @media (max-width: 992px) {
-            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-            .audience-grid { 
-                grid-template-columns: 1fr; 
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .audience-grid {
+                grid-template-columns: 1fr;
                 gap: 40px;
             }
             .audience-card.main-card,
             .audience-card:not(.main-card) {
                 transform: none;
             }
-            .about .container { flex-direction: column; }
-            .audience-gradient-background { display: none; }
+            .about .container {
+                flex-direction: column;
+            }
+            .audience-gradient-background {
+                display: none;
+            }
         }
         @media (max-width: 768px) {
-            .hero { background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp'); background-position: top center; }
-            .hero .container { justify-content: flex-end; flex-direction: column; min-height: 100vh; }
-            .hero-content { max-width: 100%; }
-            .benefits h2, .benefits .subtitle { max-width: 90%; }
-            .benefits-grid { grid-template-columns: 1fr; }
-            .audience { padding-bottom: 60px; }
+            .hero {
+                background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp');
+                background-position: top center;
+            }
+            .hero .container {
+                justify-content: flex-end;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .benefits h2, .benefits .subtitle {
+                max-width: 90%;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .audience {
+                padding-bottom: 60px;
+            }
         }
     </style>
 </head>
@@ -406,12 +443,18 @@
                         <input type="hidden" name="or" value="246816027b4d3f31f9040a7620a2e7c4">
                         
                         <input name="fullname" type="text" placeholder="* Digite seu Nome" required>
+                        <span class="error-message" id="fullname-error"></span>
+
                         <input name="email" type="email" placeholder="* Digite seu melhor E-mail" required>
+                        <span class="error-message" id="email-error"></span>
+
                         <input name="phone" type="tel" placeholder="* Digite seu WhatsApp" required>
+                        <span class="error-message" id="phone-error"></span>
+
                         <button class="btn" type="submit">Inscreva-se</button>
                     </form>
                 </div>
-                </div>
+            </div>
         </div>
     </header>
 
@@ -495,26 +538,59 @@
 
         if (leadForm) {
             leadForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Impede o envio padrão do formulário
+                event.preventDefault();
 
                 const submitButton = leadForm.querySelector('button[type="submit"]');
                 const nameInput = leadForm.querySelector('input[name="fullname"]');
                 const emailInput = leadForm.querySelector('input[name="email"]');
                 const phoneInput = leadForm.querySelector('input[name="phone"]');
 
-                // Validação simples
-                if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim()) {
-                    alert('Por favor, preencha todos os campos obrigatórios.');
-                    return;
+                const nameError = document.getElementById('fullname-error');
+                const emailError = document.getElementById('email-error');
+                const phoneError = document.getElementById('phone-error');
+
+                // --- 1. Reseta os erros antes de validar novamente ---
+                let isValid = true;
+                [nameInput, emailInput, phoneInput].forEach(input => input.classList.remove('input-error'));
+                [nameError, emailError, phoneError].forEach(error => error.style.display = 'none');
+
+                // --- 2. Valida cada campo individualmente ---
+                if (!nameInput.value.trim()) {
+                    nameInput.classList.add('input-error');
+                    nameError.textContent = 'Por favor, preencha seu nome.';
+                    nameError.style.display = 'block';
+                    isValid = false;
                 }
 
+                if (!emailInput.value.trim()) {
+                    emailInput.classList.add('input-error');
+                    emailError.textContent = 'Por favor, preencha seu e-mail.';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+                    emailInput.classList.add('input-error');
+                    emailError.textContent = 'Formato de e-mail inválido.';
+                    emailError.style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!phoneInput.value.trim()) {
+                    phoneInput.classList.add('input-error');
+                    phoneError.textContent = 'Por favor, preencha seu WhatsApp.';
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                }
+
+                // --- 3. Se não for válido, para a execução ---
+                if (!isValid) {
+                    return;
+                }
+                
+                // --- 4. Se for válido, continua com o envio ---
                 submitButton.disabled = true;
                 submitButton.textContent = 'Enviando...';
 
-                // --- Dados para o ActiveCampaign (usa todos os campos do formulário)
                 const activeCampaignFormData = new FormData(leadForm);
-                
-                // --- Dados para o Webhook do Make.com (apenas nome e e-mail)
                 const makeHookData = {
                     name: nameInput.value,
                     email: emailInput.value,
@@ -525,28 +601,27 @@
                 const activeCampaignUrl = 'https://neurosintonia.activehosted.com/proc.php';
                 const thankYouPageUrl = 'https://neurosintonia.com.br/pagina-de-obrigado-webnar/';
 
-                // Envia para ambos os destinos ao mesmo tempo
                 Promise.allSettled([
                     fetch(webhookUrl, {
                         method: 'POST',
-                        mode: 'no-cors', // Importante para evitar erros de CORS
+                        mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(makeHookData)
                     }),
                     fetch(activeCampaignUrl, {
                         method: 'POST',
-                        mode: 'no-cors', // Importante para evitar erros de CORS
+                        mode: 'no-cors',
                         body: activeCampaignFormData
                     })
                 ]).finally(() => {
-                    // Espera um instante e redireciona para a página de obrigado, independentemente do resultado dos envios
                     setTimeout(() => {
                         window.location.href = thankYouPageUrl;
-                    }, 800); // Um pequeno atraso para ajudar a garantir que as requisições foram enviadas
+                    }, 800);
                 });
             });
         }
     });
 </script>
+
 </body>
 </html>
