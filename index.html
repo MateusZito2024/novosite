@@ -1,242 +1,444 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profissão Terapeuta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="Conheça as principais abordagens terapêuticas e como a CIM® preenche as lacunas no atendimento!">
+    <link rel="icon" href="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/91639-b285b676179e51f5b686cc2012590637.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Um CSS básico para dar uma ideia da estrutura. Para a fidelidade total, seria necessário um trabalho de estilização mais detalhado. */
-        body {
-            font-family: sans-serif;
+        /* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
+        :root {
+            --gold: #deb05a;
+            --dark-gray: #222;
+            --text-color: #333;
+            --white: #ffffff;
+            --light-gray: #f8f8f8;
+            --green: #098b0e;
+            --input-bg: #e9e9e9;
+        }
+
+        * {
             margin: 0;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- ESTILOS DAS SEÇÕES --- */
+        section {
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        /* --- 1. SEÇÃO HERO (TOPO) --- */
         .hero {
-            background-color: #1a1a1a; /* Cor de fundo aproximada */
-            color: white;
+            background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa386f4.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 0;
+        }
+
+        .hero .container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 80px 40px;
+            min-height: 90vh;
         }
+
         .hero-content {
-            max-width: 500px;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-        }
-        .hero h1 .highlight {
-            color: #c5a66a; /* Cor dourada aproximada */
-        }
-        .hero p {
-            font-size: 1.1em;
-            margin: 20px 0;
-        }
-        .event-details {
-            border: 1px solid #c5a66a;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin: 20px 0;
-        }
-        .form-container input {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 8px;
             width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
+            max-width: 500px; /* Limita a largura do box de conteúdo */
+        }
+        
+        .hero-logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 .highlight {
+            color: #deb05a;
+        }
+        
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .event-tags span {
+            border: 2px solid var(--dark-gray);
             border-radius: 5px;
-            border: 1px solid #ccc;
+            padding: 8px 12px;
+            font-weight: 700;
         }
-        .form-container button {
-            background-color: #c5a66a;
-            color: #1a1a1a;
-            font-weight: bold;
-            padding: 15px;
+        
+        /* --- FORMULÁRIO --- */
+        .form-wrapper .form-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .form-wrapper input {
             width: 100%;
+            background-color: var(--input-bg);
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
         }
-        .hero-image {
-            max-width: 500px;
-            margin-left: 50px;
-        }
-        .hero-image img {
+        
+        .form-wrapper .btn {
             width: 100%;
-            border-radius: 10px; /* Borda arredondada na imagem */
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: var(--gold);
+            transition: background-color 0.3s;
         }
-        .benefits-section {
-            background-color: #f0f0f0;
+        .form-wrapper .btn:hover {
+            filter: brightness(1.1);
         }
-        .benefits-section h2 {
+
+        /* --- 2. SEÇÃO DE BENEFÍCIOS --- */
+        .benefits {
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        .benefits h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .benefits .subtitle {
+            font-size: 1.1rem;
+            color: #555;
             margin-bottom: 40px;
         }
-        .cards-container {
-            display: flex;
-            justify-content: center;
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            flex-wrap: wrap;
+            text-align: left;
         }
-        .card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 250px;
+
+        .benefit-card {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: 18px;
         }
-        .card .icon {
-            font-size: 2em;
-            color: green; /* Cor do ícone de check */
+
+        .benefit-card img {
+            width: 28px;
+            margin-bottom: 15px;
         }
-        .target-audience-section {
-             background-color: #333; /* Cor de fundo aproximada */
-             color: white;
+        
+        .benefit-card p {
+            font-size: 1rem;
+            line-height: 1.5;
         }
-        .target-audience-section h2 {
-             margin-bottom: 40px;
-        }
-        .audience-card {
-            background-color: white;
-            color: #333;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 300px;
-            margin: 10px;
-            border-top: 5px solid #c5a66a;
-        }
-        .audience-card.center {
-            transform: scale(1.1); /* Efeito de destaque no card central */
+        
+        /* --- 3. SEÇÃO DE PÚBLICO ALVO --- */
+        .audience {
+            background-color: var(--light-gray);
             position: relative;
-            z-index: 10;
+            padding-bottom: 150px; /* Espaço para o botão verde */
         }
+        
+        .audience-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: var(--gold);
+            z-index: 0;
+        }
+
+        .audience .container {
+             text-align: center;
+        }
+        
+        .audience h2 {
+            color: #686868;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr 1fr; /* Coluna central maior */
+            gap: 20px;
+            align-items: center;
+        }
+
+        .audience-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .audience-card.main-card {
+             transform: translateY(-20px); /* Eleva o card central */
+        }
+
         .audience-card h3 {
-            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-        .about-section {
-            background-color: #1a1a1a;
-            color: white;
+        
+        .audience-card .divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--dark-gray);
+            margin: 15px auto;
+        }
+        
+        .audience-cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: var(--white);
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 7px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
+        }
+        
+        /* --- 4. SEÇÃO SOBRE --- */
+        .about {
+            background-color: #020202;
+            background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa38751.webp');
+            background-size: cover;
+            background-position: center;
+            color: #d0d0d0;
+        }
+
+        .about .container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 80px 40px;
+            gap: 40px;
         }
+        
         .about-content {
-            max-width: 500px;
-            margin-right: 50px;
+            flex: 1;
         }
-        .about-image img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
         }
-        .cta-section {
-            background-color: #1a1a1a;
-            padding-bottom: 60px;
+        
+        .about-content p {
+            font-style: italic;
+            font-size: 1.1rem;
         }
-        .cta-button {
-            background-color: #00b300; /* Cor verde do botão */
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 5px;
+
+        .about-image-placeholder {
+            flex: 1; /* A imagem de fundo da seção já faz o papel da imagem */
         }
+        
+        /* --- 5. FOOTER --- */
         footer {
-            background-color: #1a1a1a;
-            color: #aaa;
+            background-color: #424242;
+            color: var(--white);
             text-align: center;
-            padding: 20px;
-            border-top: 1px solid #444;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+             .audience-card.main-card {
+                transform: none; /* Remove a elevação em telas menores */
+            }
+            .about .container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                 background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp');
+                 background-position: top center;
+            }
+            .hero .container {
+                justify-content: flex-end;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .audience-bg {
+                display: none; /* Oculta a faixa dourada no mobile */
+            }
+            .audience {
+                padding-bottom: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <section class="section hero">
-        <div class="hero-content">
-            <p>PROFISSÃO TERAPEUTA</p>
-            <h1>CONHEÇA AS <span class="highlight">PRINCIPAIS ABORDAGENS TERAPÊUTICAS</span> E COMO A CIM® PREENCHE AS LACUNAS NO ATENDIMENTO!</h1>
-            <p>Nessas aulas você verá as ferramentas essenciais para você se tornar um terapeuta completo, com métodos inovadores e resultados concretos!</p>
-            <div class="event-details">
-                28, 29 e 30 de Julho | 20h | ► YouTube
-            </div>
-            <div class="form-container">
-                <form>
-                    <input type="text" placeholder="* Digite seu Nome">
-                    <input type="email" placeholder="* Digite seu melhor E-mail">
-                    <input type="tel" placeholder="* Digite seu WhatsApp">
-                    <button type="submit">INSCREVA-SE</button>
-                </form>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb16c96567487594.svg" alt="Profissão Terapeuta Logo" class="hero-logo">
+                <h1>CONHEÇA AS <span class="highlight">PRINCIPAIS ABORDAGENS TERAPÊUTICAS</span> E COMO A CIM® PREENCHE AS LACUNAS NO ATENDIMENTO!</h1>
+                <p>Nessas aulas você verá as ferramentas essenciais para você se tornar um terapeuta completo, com métodos inovadores e resultados concretos!</p>
+                <div class="event-tags">
+                    <span>28, 29 e 30 de Julho</span>
+                    <span>20h</span>
+                    <span>▶️ YouTube</span>
+                </div>
+                <div class="form-wrapper">
+                    <p class="form-title">Preencha os seus dados para participar:</p>
+                    <form>
+                        <input type="text" placeholder="* Digite seu Nome">
+                        <input type="email" placeholder="* Digite seu melhor E-mail">
+                        <input type="tel" placeholder="* Digite seu WhatsApp">
+                        <button class="btn" type="submit">Inscreva-se</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://i.imgur.com/Kq73B2S.png" alt="Italo Marsili">
-        </div>
-    </section>
+    </header>
 
-    <section class="section benefits-section">
-        <h2>O que você vai descobrir nas aulas do Profissão Terapeuta</h2>
-        <p>Durante as 3 aulas ao vivo, você vai aprender:</p>
-        <div class="cards-container">
-            <div class="card">
-                <div class="icon">✓</div>
-                <p><strong>Como as principais abordagens terapêuticas funcionam</strong> e o que falta nas abordagens tradicionais.</p>
+    <main>
+        <section class="benefits">
+            <div class="container">
+                <h2>O que você vai descobrir nas aulas do Profissão Terapeuta</h2>
+                <p class="subtitle">Durante as 3 aulas ao vivo, você vai aprender:</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb1740d931081709.svg" alt="Ícone de check">
+                        <p><strong>Como as principais abordagens terapêuticas funcionam</strong> e o que falta nas abordagens tradicionais.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb1740d931081709.svg" alt="Ícone de check">
+                        <p><strong>Como a CIM® preenche as lacunas deixadas por outros métodos,</strong> trazendo uma abordagem mais eficiente e atualizada.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb1740d931081709.svg" alt="Ícone de check">
+                        <p><strong>Técnicas inovadoras que fazem a diferença no atendimento terapêutico,</strong> permitindo que você ofereça soluções reais para seus pacientes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb1740d931081709.svg" alt="Ícone de check">
+                        <p><strong>Como usar ferramentas modernas para otimizar seus resultados,</strong> garantindo maior confiança e sucesso no consultório.</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <div class="icon">✓</div>
-                <p><strong>Como a CIM® preenche as lacunas deixadas por outros métodos</strong>, trazendo uma abordagem mais eficiente e atualizada.</p>
-            </div>
-            <div class="card">
-                <div class="icon">✓</div>
-                <p><strong>Técnicas inovadoras que fazem a diferença no atendimento terapêutico</strong>, permitindo que você ofereça soluções reais para seus pacientes.</p>
-            </div>
-            <div class="card">
-                <div class="icon">✓</div>
-                <p><strong>Como usar ferramentas modernas para otimizar seus resultados</strong>, garantindo maior confiança e sucesso no consultório.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section target-audience-section">
-        <h2>VEJA PARA QUEM É A CIM®:</h2>
-        <div class="cards-container">
-            <div class="audience-card">
-                <h3>TERAPEUTAS INICIANTES</h3>
-                <p>Se você é um terapeuta iniciante, a CIM® fornecerá um conhecimento sólido e a segurança necessária para atuar com confiança. Além disso, você terá acesso a um Marketplace onde poderá encontrar novos clientes.</p>
+        <section class="audience">
+            <div class="audience-bg"></div>
+            <div class="container">
+                <h2>VEJA PARA QUEM É A CIM®:</h2>
+                 <div class="audience-grid">
+                    <div class="audience-card">
+                        <h3>TERAPEUTAS INICIANTES</h3>
+                        <div class="divider"></div>
+                        <p>Se você é um terapeuta iniciante, a CIM® fornecerá um conhecimento sólido e a segurança necessária para atuar com confiança. Além disso, você terá acesso a um Marketplace onde poderá encontrar novos clientes.</p>
+                    </div>
+                    <div class="audience-card main-card">
+                        <h3>PESSOAS EM TRANSIÇÃO DE CARREIRA</h3>
+                        <div class="divider"></div>
+                        <p>Se você está em busca de fazer uma transição de carreira segura e tranquila, com a CIM® é totalmente possível começar uma nova carreira como terapeuta enquanto ainda trabalha no seu emprego atual, de forma que você conquiste uma renda extra atendendo clientes em seus horários livres.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>TERAPEUTA EXPERIENTE</h3>
+                        <div class="divider"></div>
+                        <p>Se você já é terapeuta há um tempo, através da CIM® você aprenderá o Método Terapêutico do Dr. Italo Marsili — o mesmo método utilizado por ele em seus atendimentos —, tudo para que você conquiste mais prestígio, clientes e resultados.</p>
+                    </div>
+                </div>
+                <a href="#" class="audience-cta-button">QUERO ME INSCREVER</a>
             </div>
-            <div class="audience-card center">
-                <h3>PESSOAS EM TRANSIÇÃO DE CARREIRA</h3>
-                <p>Se você está em busca de fazer uma transição de carreira segura e tranquila, com a CIM® é totalmente possível começar uma nova carreira como terapeuta enquanto ainda trabalha no seu emprego atual, de forma que você conquiste uma renda extra atendendo clientes em seus horários livres.</p>
-            </div>
-            <div class="audience-card">
-                <h3>TERAPEUTA EXPERIENTE</h3>
-                <p>Se você já é terapeuta há um tempo, através da CIM® você aprenderá o Método Terapêutico do Dr. Italo Marsili — o mesmo método utilizado por ele em seus atendimentos —, tudo para que você conquiste mais prestígio, clientes e resultados.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section cta-section">
-        <a href="#" class="cta-button">QUERO ME INSCREVER</a>
-    </section>
-
-    <section class="section about-section">
-        <div class="about-content">
-            <h2>Quem é Italo Marsili?</h2>
-            <p>O Dr. Italo Marsili é um médico psiquiatra formado pela Universidade Federal do Rio de Janeiro, com mais de uma década de experiência clínica.</p>
-            <p>Durante sua carreira, ele conduziu mais de 20 mil sessões de psicoterapia e consultas psiquiátricas, dedicando 12 horas por dia, de segunda a sábado, para ouvir, aconselhar, medicar, propor e refletir sobre uma ampla variedade de casos.</p>
-            <p>Questões de todo tipo eram trazidas ao consultório: dinheiro e saúde, Deus e família, passado e futuro, vida e morte.</p>
-            <p>Além disso, ele é o criador do programa Guerrilha Way, da Certificação Italo Marsili e de outros cursos e imersões que já impactaram mais de 120 mil pessoas em pelo menos dez países.</p>
-        </div>
-        <div class="about-image">
-            <img src="https://i.imgur.com/k2TqL9L.png" alt="Foto de Italo Marsili">
-        </div>
-    </section>
+        <section class="about">
+            <div class="container">
+                 <div class="about-content">
+                    <h2>Quem é Italo Marsili?</h2>
+                    <p>O Dr. Italo Marsili é um médico psiquiatra formado pela Universidade Federal do Rio de Janeiro, com mais de uma década de experiência clínica.</p>
+                    <p>Durante sua carreira, ele conduziu mais de 20 mil sessões de psicoterapia e consultas psiquiátricas, dedicando 12 horas por dia, de segunda a sábado, para ouvir, aconselhar, medicar, propor e refletir sobre uma ampla variedade de casos.</p>
+                    <p>Questões de todo tipo eram trazidas ao consultório: dinheiro e saúde, Deus e família, passado e futuro, vida e morte.</p>
+                    <p>Além disso, ele é o criador do programa Guerrilha Way, da Certificação Italo Marsili e de outros cursos e imersões que já impactaram mais de 120 mil pessoas em pelo menos dez países.</p>
+                </div>
+                <div class="about-image-placeholder">
+                    </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>Italo Marsili © 2025. Todos os direitos reservados.</p>
