@@ -553,6 +553,37 @@ section {
 .hero-content .hero-subtitle {
     text-align: center;
 }
+            /* --- INÍCIO - LINHA DOURADA AJUSTÁVEL NA PÁGINA (MOBILE) --- */
+
+/* 1. Torna o banner uma referência para a posição da linha */
+.hero {
+    position: relative;
+}
+
+/* 2. Cria e posiciona a linha dourada */
+.hero::after {
+    content: '';
+    position: absolute;      /* Posiciona em relação ao '.hero', rolando com a página */
+    
+    /* ======== CONTROLES DE AJUSTE FINO ======== */
+    
+    /* Para SUBIR ou DESCER a linha, mude o valor de 'bottom'. */
+    /* 'bottom: 0;' fica na borda exata entre o banner e o conteúdo abaixo. */
+    /* 'bottom: 20px;' sobe a linha 20px para dentro da imagem do banner. */
+    bottom: 630px;
+    
+    /* Para deixar a linha MAIS GROSSA ou MAIS FINA, mude o valor de 'height'. */
+    height: 4px;
+    
+    /* =========================================== */
+    
+    left: 0;
+    width: 100%;
+    background: var(--gold);
+    z-index: 10;
+}
+
+/* --- FIM --- */
     </style>
 </head>
 <body>
