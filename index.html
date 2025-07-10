@@ -91,7 +91,7 @@
         .hero-content {
             background-color: rgba(255, 255, 255, 0.98);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 20px;
             width: 100%;
             max-width: 500px;
         }
@@ -384,7 +384,7 @@
         <div class="container">
             <div class="hero-content">
                 <img src="https://i.postimg.cc/gJNr8J3n/images-Photoroom.png" alt="Profissão Terapeuta Logo" class="hero-logo">
-                <h1>CONHEÇA OS <span class="highlight">PRINCÍPIOS DA RESTAURAÇÃO NEUROEMOCIONAL</span> E VEJA COMO SALVAR SEU CASAMENTO MESMO QUE ELE TENHA SAÍDO DE CASA!</h1>
+                <h1>CONHEÇA OS <span class="highlight">PRINCÍPIOS &nbsp; &nbsp; DA RESTAURAÇÃO NEUROEMOCIONAL</span> E VEJA COMO SALVAR SEU CASAMENTO MESMO QUE ELE TENHA SAÍDO DE CASA!</h1>
                 <p class="hero-subtitle">Nessa aula gratuita e científica, você vai entender por que o seu casamento não deu certo até agora e como restaurar tudo sem se humilhar, sem correr atrás e sem ele precisar querer.</p>
                 
                 <div class="event-wrapper">
@@ -398,13 +398,14 @@
                 </div>
 
                 <div class="form-wrapper">
-                    <p class="form-title">Preencha os seus dados para participar:</p>
-                    <form>
-                        <input type="text" placeholder="* Digite seu Nome">
-                        <input type="email" placeholder="* Digite seu melhor E-mail">
-                        <input type="tel" placeholder="* Digite seu WhatsApp">
-                        <button class="btn" type="submit">Inscreva-se</button>
-                    </form>
+    <p class="form-title">Preencha os seus dados para participar:</p>
+    <form id="lead-form"> 
+        <input name="name" type="text" placeholder="* Digite seu Nome" required>
+        <input name="email" type="email" placeholder="* Digite seu melhor E-mail" required>
+        <input name="phone" type="tel" placeholder="* Digite seu WhatsApp" required>
+        <button class="btn" type="submit">Inscreva-se</button>
+    </form>
+</div>
                 </div>
             </div>
         </div>
@@ -483,6 +484,42 @@
     <footer>
         <p>Copyright 2025 – Todos os direitos reservados.</p>
     </footer>
+<script>
+    // Seleciona o formulário pelo ID que adicionamos
+    const form = document.getElementById('lead-form');
 
+    form.addEventListener('submit', function(event) {
+        // Previne o comportamento padrão do formulário
+        event.preventDefault();
+
+        // URL do webhook do Make.com (do site de referência)
+        const webhookUrl = 'https://hook.us1.make.com/q2y2n698q9y2iht1y23gq1wovs814y42';
+        
+        // Página de obrigado (do site de referência)
+        const thankYouPageUrl = 'https://neurociencianocasamento.online/obrigado';
+
+        // Pega os dados do formulário
+        const formData = new FormData(form);
+
+        // Envia os dados para o webhook
+        fetch(webhookUrl, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            // Se o envio foi bem-sucedido, redireciona para a página de obrigado
+            if (response.ok) {
+                window.location.href = thankYouPageUrl;
+            } else {
+                // Se der erro, avisa o usuário
+                alert('Houve um erro ao enviar seus dados. Tente novamente.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro no envio:', error);
+            alert('Houve um erro de conexão. Tente novamente.');
+        });
+    });
+</script>
 </body>
 </html>
