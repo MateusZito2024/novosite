@@ -391,11 +391,16 @@
                 background-image: url('https://i.postimg.cc/1zKfhyYm/mobile-cabe-alho-Photoroom.jpg');
                 background-position: top center;
             }
-            .hero .container {
-                justify-content: flex-end;
-                flex-direction: column;
-                min-height: 100vh;
-            }
+            /* --- INÍCIO DO AJUSTE DE POSIÇÃO --- */
+
+/* Encontre esta regra no seu CSS e substitua pela versão abaixo */
+.hero .container {
+    justify-content: flex-end; /* Mantém o conteúdo na base */
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 42vh;      /* NOVO: Adiciona um espaço de 20% da altura da tela no topo, empurrando o conteúdo para baixo. */
+    padding-bottom: 5vh;    /* Mantém um respiro na parte inferior */
+}
             .hero-content {
                 max-width: 100%;
             }
@@ -469,7 +474,85 @@ section {
     font-size: 0.9rem;
     margin-top: 40px;
 }
-        }
+/* --- INÍCIO DOS AJUSTES FINAIS PARA MOBILE --- */
+
+/* Ajusta o container principal do topo para dar espaço na base */
+.hero .container {
+    padding-bottom: 5vh; /* Adiciona um respiro na parte inferior da tela */
+}
+
+/* Centraliza a caixa de conteúdo e evita que ela cole nas bordas */
+.hero-content {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Ajusta o logo para não ficar tão para cima */
+.hero-logo {
+    margin-top: -40px;
+    margin-bottom: -45px;
+    width: 140px;
+}
+
+/* Deixa o título principal mais compacto e centralizado */
+.hero-content h1 {
+    font-size: 1.0rem; /* Tamanho reduzido */
+    line-height: 1.3; /* Espaçamento entre linhas mais justo */
+    text-align: center;
+}
+
+/* Ajusta o subtítulo */
+.hero-content .hero-subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Diminui o tamanho das tags de evento SEM quebrar o layout */
+.event-tags span {
+    font-size: 0.7rem; /* Fonte bem menor */
+    padding: 8px 10px; /* Preenchimento reduzido */
+    white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+}
+.event-tags img {
+    width: 13px; /* Ícone menor */
+    height: 13px;
+}
+
+/* Garante que o formulário tenha um respiro no topo */
+.form-wrapper {
+    margin-top: 15px;
+}
+
+/* --- FIM DOS AJUSTES FINAIS PARA MOBILE --- */
+            /* --- AJUSTE PARA MOVER O LOGO (MOBILE) --- */
+.hero-logo {
+    position: absolute;   /* Tira o logo do fluxo normal e o "flutua" */
+    z-index: 10;          /* Garante que ele fique sobre outros elementos */
+    
+    /* Posição do logo (aqui você pode fazer o ajuste fino) */
+    top: -5vh;             /* Distância do topo (8% da altura da tela) */
+    left: 22%;            /* Alinha à metade da tela */
+    transform: translateX(-50%); /* Centraliza o logo perfeitamente */
+
+    /* Reseta margens e define um novo tamanho para o mobile */
+    width: 160px;
+    margin: 0;
+}
+            /* --- AJUSTE DA CAIXA DE CONTEÚDO (MOBILE) --- */
+.hero-content {
+    padding-top: 0px; /* Adiciona um preenchimento interno no topo */
+    margin-top: 0;     /* Remove a margem que adicionamos antes */
+    text-align: center;/* Centraliza todo o texto dentro da caixa */
+}
+
+/* Garante que o título e subtítulo também fiquem centralizados */
+.hero-content h1,
+.hero-content .hero-subtitle {
+    text-align: center;
+}
     </style>
 </head>
 <body>
