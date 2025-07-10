@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
         :root {
-            --gold: #deb05a;
+            --gold: #D4AF37; /* Tom de dourado ajustado */
+            --dark-gold: #b8860b;
             --dark-gray: #222;
             --text-color: #333;
             --white: #ffffff;
@@ -61,13 +61,11 @@
             color: inherit;
         }
 
-        /* --- ESTILOS DAS SEÇÕES --- */
         section {
             padding: 60px 0;
             overflow: hidden;
         }
 
-        /* --- 1. SEÇÃO HERO (TOPO) --- */
         .hero {
             background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa386f4.webp');
             background-size: cover;
@@ -100,7 +98,7 @@
         }
 
         .hero-content h1 .highlight {
-            color: #deb05a;
+            color: var(--gold);
         }
 
         .hero-content .hero-subtitle {
@@ -122,7 +120,6 @@
             font-size: 0.9rem;
         }
         
-        /* --- FORMULÁRIO --- */
         .form-wrapper .form-title {
             font-weight: 700;
             margin-bottom: 8px;
@@ -144,7 +141,7 @@
             padding: 12px;
             border: none;
             border-radius: 5px;
-            color: var(--white);
+            color: var(--dark-gray);
             font-weight: 700;
             font-size: 1rem;
             text-transform: uppercase;
@@ -165,28 +162,44 @@
         .benefits .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 40px; }
         .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: left; }
         
-        /* ALTERAÇÕES FEITAS AQUI */
+        /* ALTERAÇÕES DO EFEITO DE GRADIENTE */
         .benefit-card {
             background-color: var(--light-gray);
             padding: 25px;
             border-radius: 18px;
-            position: relative; /* Essencial para o efeito funcionar */
-            border-bottom: 3px solid var(--gold); /* Linha dourada na base */
-            box-shadow: 0 3px 0px #000, 0 6px 8px rgba(0,0,0,0.2); /* Linha preta e a sombra 3D */
-            transition: all 0.2s ease-in-out; /* Transição suave para o efeito hover */
+            position: relative;
+            overflow: hidden; /* Garante que o gradiente não "vaze" pelos cantos */
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2); /* Sombra suave para o efeito 3D */
+            transition: all 0.2s ease-in-out;
+            padding-bottom: 35px; /* Abre espaço para a borda não cobrir o texto */
         }
-        
-        /* Efeito opcional ao passar o mouse para realçar o 3D */
+
         .benefit-card:hover {
-            transform: translateY(-5px); /* Levanta o card */
-            box-shadow: 0 5px 0px #000, 0 10px 15px rgba(0,0,0,0.25); /* Aumenta a sombra */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+        }
+
+        /* A barra de gradiente personalizada */
+        .benefit-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px; /* Espessura da barra */
+            background: linear-gradient(90deg, 
+                var(--dark-gold) 0%, 
+                var(--gold) 30%, 
+                rgba(255, 255, 255, 0.4) 60%, 
+                rgba(0, 0, 0, 0.2) 90%
+            );
         }
         /* FIM DAS ALTERAÇÕES */
 
         .benefit-card img { width: 28px; margin-bottom: 15px; }
         .benefit-card p { font-size: 1rem; line-height: 1.5; }
         
-        /* --- 3. SEÇÃO DE PÚBLICO ALVO --- */
+        /* --- DEMAIS SEÇÕES --- */
         .audience { background-color: var(--light-gray); position: relative; padding-bottom: 150px; }
         .audience-bg { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background-color: var(--gold); z-index: 0; }
         .audience .container { text-align: center; }
@@ -197,19 +210,14 @@
         .audience-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
         .audience-card .divider { width: 100px; height: 1px; background-color: var(--dark-gray); margin: 15px auto; }
         .audience-cta-button { display: inline-block; background: var(--green); color: var(--white); padding: 15px 40px; font-weight: 700; border-radius: 7px; text-transform: uppercase; position: relative; z-index: 1; margin-top: 60px; }
-        
-        /* --- 4. SEÇÃO SOBRE --- */
         .about { background-color: #020202; background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa38751.webp'); background-size: cover; background-position: center; color: #d0d0d0; }
         .about .container { display: flex; align-items: center; gap: 40px; }
         .about-content { flex: 1; }
         .about-content h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
         .about-content p { font-style: italic; font-size: 1.1rem; }
         .about-image-placeholder { flex: 1; }
-        
-        /* --- 5. FOOTER --- */
         footer { background-color: #424242; color: var(--white); text-align: center; padding: 15px 0; font-size: 0.9rem; }
 
-        /* --- RESPONSIVIDADE --- */
         @media (max-width: 992px) {
             .benefits-grid { grid-template-columns: repeat(2, 1fr); }
             .audience-grid { grid-template-columns: 1fr; }
