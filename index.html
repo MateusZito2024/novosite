@@ -33,7 +33,7 @@
             font-family: 'Open Sans', sans-serif;
             color: var(--text-color);
             background-color: var(--white);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .container {
@@ -48,7 +48,7 @@
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         img {
@@ -72,56 +72,60 @@
             background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa386f4.webp');
             background-size: cover;
             background-position: center;
-            padding: 40px 0;
+            padding: 10px 0;
         }
 
         .hero .container {
             display: flex;
             align-items: center;
-            min-height: 90vh;
         }
 
         .hero-content {
             background-color: rgba(255, 255, 255, 0.98);
-            padding: 40px;
+            padding: 20px;
             border-radius: 8px;
             width: 100%;
-            max-width: 500px; /* Limita a largura do box de conteúdo */
+            max-width: 500px;
         }
         
         .hero-logo {
-            width: 200px;
-            margin-bottom: 20px;
+            width: 180px;
+            margin-bottom: 10px;
         }
 
         .hero-content h1 {
-            font-size: 2.2rem;
-            line-height: 1.3;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
         }
 
         .hero-content h1 .highlight {
             color: #deb05a;
         }
+
+        .hero-content .hero-subtitle {
+            margin-bottom: 10px;
+        }
         
         .event-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 25px 0;
+            gap: 8px;
+            margin: 10px 0;
         }
 
         .event-tags span {
             border: 2px solid var(--dark-gray);
             border-radius: 5px;
-            padding: 8px 12px;
+            padding: 5px 10px;
             font-weight: 700;
+            font-size: 0.9rem;
         }
         
         /* --- FORMULÁRIO --- */
         .form-wrapper .form-title {
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .form-wrapper input {
@@ -129,20 +133,20 @@
             background-color: var(--input-bg);
             border: none;
             border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 10px;
             font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .form-wrapper .btn {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: none;
             border-radius: 5px;
             color: var(--white);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-transform: uppercase;
             cursor: pointer;
             background: var(--gold);
@@ -153,198 +157,72 @@
         }
 
         /* --- 2. SEÇÃO DE BENEFÍCIOS --- */
-        .benefits {
-            background-color: var(--white);
-            text-align: center;
+        .benefits { 
+            background-color: var(--white); 
+            text-align: center; 
         }
+        .benefits h2 { font-size: 2rem; margin-bottom: 10px; }
+        .benefits .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 40px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: left; }
         
-        .benefits h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .benefits .subtitle {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            text-align: left;
-        }
-
+        /* ALTERAÇÕES FEITAS AQUI */
         .benefit-card {
             background-color: var(--light-gray);
             padding: 25px;
             border-radius: 18px;
-        }
-
-        .benefit-card img {
-            width: 28px;
-            margin-bottom: 15px;
+            position: relative; /* Essencial para o efeito funcionar */
+            border-bottom: 3px solid var(--gold); /* Linha dourada na base */
+            box-shadow: 0 3px 0px #000, 0 6px 8px rgba(0,0,0,0.2); /* Linha preta e a sombra 3D */
+            transition: all 0.2s ease-in-out; /* Transição suave para o efeito hover */
         }
         
-        .benefit-card p {
-            font-size: 1rem;
-            line-height: 1.5;
+        /* Efeito opcional ao passar o mouse para realçar o 3D */
+        .benefit-card:hover {
+            transform: translateY(-5px); /* Levanta o card */
+            box-shadow: 0 5px 0px #000, 0 10px 15px rgba(0,0,0,0.25); /* Aumenta a sombra */
         }
+        /* FIM DAS ALTERAÇÕES */
+
+        .benefit-card img { width: 28px; margin-bottom: 15px; }
+        .benefit-card p { font-size: 1rem; line-height: 1.5; }
         
         /* --- 3. SEÇÃO DE PÚBLICO ALVO --- */
-        .audience {
-            background-color: var(--light-gray);
-            position: relative;
-            padding-bottom: 150px; /* Espaço para o botão verde */
-        }
-        
-        .audience-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-color: var(--gold);
-            z-index: 0;
-        }
-
-        .audience .container {
-             text-align: center;
-        }
-        
-        .audience h2 {
-            color: #686868;
-            font-size: 1.5rem;
-            margin-bottom: 50px;
-        }
-
-        .audience-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr 1fr; /* Coluna central maior */
-            gap: 20px;
-            align-items: center;
-        }
-
-        .audience-card {
-            background: var(--white);
-            padding: 30px;
-            border: 1px solid var(--gold);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-        }
-        
-        .audience-card.main-card {
-             transform: translateY(-20px); /* Eleva o card central */
-        }
-
-        .audience-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .audience-card .divider {
-            width: 100px;
-            height: 1px;
-            background-color: var(--dark-gray);
-            margin: 15px auto;
-        }
-        
-        .audience-cta-button {
-            display: inline-block;
-            background: var(--green);
-            color: var(--white);
-            padding: 15px 40px;
-            font-weight: 700;
-            border-radius: 7px;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 1;
-            margin-top: 60px;
-        }
+        .audience { background-color: var(--light-gray); position: relative; padding-bottom: 150px; }
+        .audience-bg { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background-color: var(--gold); z-index: 0; }
+        .audience .container { text-align: center; }
+        .audience h2 { color: #686868; font-size: 1.5rem; margin-bottom: 50px; }
+        .audience-grid { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 20px; align-items: center; }
+        .audience-card { background: var(--white); padding: 30px; border: 1px solid var(--gold); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 100%; }
+        .audience-card.main-card { transform: translateY(-20px); }
+        .audience-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .audience-card .divider { width: 100px; height: 1px; background-color: var(--dark-gray); margin: 15px auto; }
+        .audience-cta-button { display: inline-block; background: var(--green); color: var(--white); padding: 15px 40px; font-weight: 700; border-radius: 7px; text-transform: uppercase; position: relative; z-index: 1; margin-top: 60px; }
         
         /* --- 4. SEÇÃO SOBRE --- */
-        .about {
-            background-color: #020202;
-            background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa38751.webp');
-            background-size: cover;
-            background-position: center;
-            color: #d0d0d0;
-        }
-
-        .about .container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-content {
-            flex: 1;
-        }
-        
-        .about-content h2 {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        
-        .about-content p {
-            font-style: italic;
-            font-size: 1.1rem;
-        }
-
-        .about-image-placeholder {
-            flex: 1; /* A imagem de fundo da seção já faz o papel da imagem */
-        }
+        .about { background-color: #020202; background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececa38751.webp'); background-size: cover; background-position: center; color: #d0d0d0; }
+        .about .container { display: flex; align-items: center; gap: 40px; }
+        .about-content { flex: 1; }
+        .about-content h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .about-content p { font-style: italic; font-size: 1.1rem; }
+        .about-image-placeholder { flex: 1; }
         
         /* --- 5. FOOTER --- */
-        footer {
-            background-color: #424242;
-            color: var(--white);
-            text-align: center;
-            padding: 15px 0;
-            font-size: 0.9rem;
-        }
+        footer { background-color: #424242; color: var(--white); text-align: center; padding: 15px 0; font-size: 0.9rem; }
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 992px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .audience-grid {
-                grid-template-columns: 1fr;
-            }
-             .audience-card.main-card {
-                transform: none; /* Remove a elevação em telas menores */
-            }
-            .about .container {
-                flex-direction: column;
-            }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .audience-grid { grid-template-columns: 1fr; }
+            .audience-card.main-card { transform: none; }
+            .about .container { flex-direction: column; }
         }
-
         @media (max-width: 768px) {
-            .hero {
-                 background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp');
-                 background-position: top center;
-            }
-            .hero .container {
-                justify-content: flex-end;
-                flex-direction: column;
-                min-height: 100vh;
-            }
-            .hero-content {
-                max-width: 100%;
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            .audience-bg {
-                display: none; /* Oculta a faixa dourada no mobile */
-            }
-            .audience {
-                padding-bottom: 60px;
-            }
+            .hero { background-image: url('https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/mobile/3071827_1_1751043786685ececa386f4.webp'); background-position: top center; }
+            .hero .container { justify-content: flex-end; flex-direction: column; min-height: 100vh; }
+            .hero-content { max-width: 100%; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .audience-bg { display: none; }
+            .audience { padding-bottom: 60px; }
         }
     </style>
 </head>
@@ -355,7 +233,7 @@
             <div class="hero-content">
                 <img src="https://pages.greatpages.com.br/lp.certificacaoitalomarsili.com.br-cim0725l-inscricao-v1/1752009237/imagens/desktop/3071827_1_1751043786685ececb16c96567487594.svg" alt="Profissão Terapeuta Logo" class="hero-logo">
                 <h1>CONHEÇA AS <span class="highlight">PRINCIPAIS ABORDAGENS TERAPÊUTICAS</span> E COMO A CIM® PREENCHE AS LACUNAS NO ATENDIMENTO!</h1>
-                <p>Nessas aulas você verá as ferramentas essenciais para você se tornar um terapeuta completo, com métodos inovadores e resultados concretos!</p>
+                <p class="hero-subtitle">Nessas aulas você verá as ferramentas essenciais para você se tornar um terapeuta completo, com métodos inovadores e resultados concretos!</p>
                 <div class="event-tags">
                     <span>28, 29 e 30 de Julho</span>
                     <span>20h</span>
