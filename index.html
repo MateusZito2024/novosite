@@ -444,7 +444,23 @@ section {
     font-size: 1.4rem;
     margin-bottom: 50px; /* Reduz a margem abaixo do título */
 }
+/* --- INÍCIO - AJUSTE DA IMAGEM DE FUNDO DA SEÇÃO 'SOBRE' (MOBILE) --- */
 
+.about {
+    /* Substitui a imagem de fundo para a versão mobile */
+    background-image: url('https://i.postimg.cc/6qWg3xKf/Mobile-rodap-Photoroom.jpg');
+
+    /* Ajusta a posição da imagem para focar na parte inferior */
+    background-position: center bottom;
+}
+
+/* Opcional, mas recomendado:
+   Remove o elemento placeholder da imagem que não é usado no mobile */
+.about .about-image-placeholder {
+    display: none;
+}
+
+/* --- FIM DO AJUSTE --- */
 .about-content h2 {
     font-size: 2rem;
     text-align: center;
@@ -653,31 +669,6 @@ footer {
     overflow: hidden;
 }
 
-/* 2. Cria e controla a imagem com tamanho e posição diretos */
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* O 'palco' da imagem ocupa todo o rodapé */
-    z-index: 0;
-    background-image: url('https://i.postimg.cc/6qWg3xKf/Mobile-rodap-Photoroom.jpg');
-    background-repeat: no-repeat;
-    opacity: 0.25;
-
-    /* ======== CONTROLES ABSOLUTOS DE TAMANHO E POSIÇÃO ======== */
-
-    /* CONTROLE DE TAMANHO: Altere a LARGURA e ALTURA da imagem em pixels. */
-    /* Use 'auto' em um dos valores para manter a proporção da imagem. */
-    background-size: 0px -200px; /* [largura] [altura] */
-
-    /* CONTROLE DE POSIÇÃO: Altere a distância da ESQUERDA e do TOPO em pixels. */
-    background-position: -20px -10px; /* [distância da esquerda] [distância do topo] */
-
-    /* ========================================================= */
-}
-
 /* 3. Garante que o texto fique na frente */
 footer p {
     position: relative;
@@ -702,6 +693,65 @@ footer p {
 }
 
 /* --- FIM DO CÓDIGO --- */
+           /* --- INÍCIO - CONTROLE TOTAL DA SEÇÃO "QUEM É RENATA MARIANO?" (MOBILE) --- */
+/* Este código inclui ajustes de TAMANHO e POSIÇÃO para o título e o texto. */
+
+.about .container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* --- CONTROLES DO TÍTULO (H2) --- */
+.about-content h2 {
+    text-align: center;
+    position: relative; 
+
+    /* ======== PAINEL DE CONTROLE DO TÍTULO ======== */
+    
+    /* 1. Para AUMENTAR ou DIMINUIR o título, altere 'font-size'. */
+    font-size: 1.7rem;
+
+    /* 2. Para SUBIR ou DESCER, altere 'top'. */
+    /* Valores negativos (ex: -10px) sobem o título. */
+    /* Valores positivos (ex: 10px) descem o título. */
+    top: 80px; 
+    
+    /* 3. Para mover para ESQUERDA ou DIREITA, altere 'left'. */
+    /* Valores negativos (ex: -5px) movem para a esquerda. */
+    /* Valores positivos (ex: 5px) movem para a direita. */
+    left: 0px;
+
+    /* 4. Para AUMENTAR ou DIMINUIR o espaço ABAIXO do título. */
+    margin-bottom: 30px; 
+
+    /* ============================================== */
+}
+
+/* --- CONTROLES DO TEXTO (P) --- */
+.about-content p {
+    text-align: justify;
+    position: relative; 
+
+    /* ======== PAINEL DE CONTROLE DO TEXTO ======== */
+
+    /* 1. Para AUMENTAR ou DIMINUIR o texto, altere 'font-size'. */
+    font-size: 1rem;
+
+    /* 2. Para deixar as linhas MAIS JUNTAS ou MAIS SEPARADAS, altere 'line-height'. */
+    line-height: 0.9;
+
+    /* 3. Para SUBIR ou DESCER o bloco de texto, altere 'top'. */
+    /* Valores negativos (ex: -15px) aproximam o texto do título. */
+    /* Valores positivos (ex: 15px) afastam o texto do título. */
+    top: 50px;
+
+    /* 4. Para mover para ESQUERDA ou DIREITA, altere 'left'. */
+    left: 0px;
+
+    /* ============================================= */
+}
+
+/* --- FIM DOS CONTROLES --- */
     </style>
 </head>
 <body>
