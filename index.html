@@ -367,6 +367,7 @@
             padding: 15px 0;
             font-size: 0.9rem;
         }
+        
         @media (max-width: 992px) {
             .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -643,6 +644,64 @@ section {
 }
 
 /* --- FIM --- */
+     /* --- INÍCIO - CONTROLE ABSOLUTO DA IMAGEM DO RODAPÉ (MOBILE) --- */
+
+/* 1. Prepara o rodapé */
+footer {
+    position: relative;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+/* 2. Cria e controla a imagem com tamanho e posição diretos */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* O 'palco' da imagem ocupa todo o rodapé */
+    z-index: 0;
+    background-image: url('https://i.postimg.cc/6qWg3xKf/Mobile-rodap-Photoroom.jpg');
+    background-repeat: no-repeat;
+    opacity: 0.25;
+
+    /* ======== CONTROLES ABSOLUTOS DE TAMANHO E POSIÇÃO ======== */
+
+    /* CONTROLE DE TAMANHO: Altere a LARGURA e ALTURA da imagem em pixels. */
+    /* Use 'auto' em um dos valores para manter a proporção da imagem. */
+    background-size: 0px -200px; /* [largura] [altura] */
+
+    /* CONTROLE DE POSIÇÃO: Altere a distância da ESQUERDA e do TOPO em pixels. */
+    background-position: -20px -10px; /* [distância da esquerda] [distância do topo] */
+
+    /* ========================================================= */
+}
+
+/* 3. Garante que o texto fique na frente */
+footer p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+/* --- FIM --- */
+            /* --- CÓDIGO PARA RESTAURAR O EFEITO DOS CARDS NO PC --- */
+
+.audience-card.main-card {
+    transform: scale(1.1);
+    z-index: 3;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.audience-card:not(.main-card) {
+    transform: scale(0.95);
+    z-index: 2;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* --- FIM DO CÓDIGO --- */
     </style>
 </head>
 <body>
