@@ -444,15 +444,36 @@ section {
     font-size: 1.4rem;
     margin-bottom: 50px; /* Reduz a margem abaixo do título */
 }
-/* --- INÍCIO - AJUSTE DA IMAGEM DE FUNDO DA SEÇÃO 'SOBRE' (MOBILE) --- */
+/* --- INÍCIO - CONTROLE TOTAL DA IMAGEM DE FUNDO 'SOBRE' (MOBILE) --- */
 
 .about {
-    /* Substitui a imagem de fundo para a versão mobile */
+    /* Imagem de fundo para a versão mobile */
     background-image: url('https://i.postimg.cc/6qWg3xKf/Mobile-rodap-Photoroom.jpg');
 
-    /* Ajusta a posição da imagem para focar na parte inferior */
-    background-position: center bottom;
+    /* Repetição e fixação da imagem (geralmente bom manter assim) */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* A imagem rola com a página */
+
+    /* ======== PAINEL DE CONTROLE DA IMAGEM ======== */
+
+    /* 1. TAMANHO: Altere aqui para dar zoom ou diminuir a imagem. */
+    /* 'cover' (padrão): Cobre toda a área, pode cortar a imagem. */
+    /* 'contain': Mostra a imagem inteira, pode deixar espaços em branco. */
+    /* '150%': Dá um zoom de 50% na imagem. */
+    /* 'auto 100%': Ajusta a altura para 100% e a largura proporcionalmente. */
+    background-size: 100%;
+
+    /* 2. POSIÇÃO (Eixos X e Y): Controle para subir, descer e mover para os lados. */
+    /* O primeiro valor é o horizontal (X) e o segundo é o vertical (Y). */
+    /* Exemplos: */
+    /* 'center center': Centraliza perfeitamente. */
+    /* 'left top': Alinha no canto superior esquerdo. */
+    /* '50% 20%': Centraliza na horizontal e desce a imagem para 20% do topo. */
+    /* 'center bottom': Centraliza na horizontal e alinha na base. */
+    background-position: 50% 20%;
 }
+
+/* --- FIM DOS CONTROLES --- */
 
 /* Opcional, mas recomendado:
    Remove o elemento placeholder da imagem que não é usado no mobile */
